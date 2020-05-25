@@ -1,3 +1,31 @@
-number: "0110\nqqqqqqqq"
-number1: '0110\nqqqqqqqq'
-number2: 0110
+server:
+  port: 8080
+
+#对象
+#friend:
+#  name: hongjun500
+#  age: 22
+#行内写法
+friend: {name: hongjun500, age: 22}
+
+#数组
+#list:
+#  - people
+#  - dog
+#  - cart
+list: [people, dog, cart]
+
+#demodata:
+#  userName: hongjun500
+#  age: 22
+#  gender: true
+#  birth: 2020/05/25
+#  map: {k1: '扎格拉玛', k2: '库里莫旗'}
+#  list:
+#    - '张三'
+#    - '李斯'
+#  people:
+#    name: 'people'
+demodata:
+  user-name:
+#    age: 2

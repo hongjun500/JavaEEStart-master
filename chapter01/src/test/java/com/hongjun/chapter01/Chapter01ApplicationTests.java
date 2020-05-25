@@ -1,23 +1,20 @@
 package com.hongjun.chapter01;
 
+import com.hongjun.chapter01.pojo.DemoData;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Value;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
+// (2.*版本不需要RunWith)
 @SpringBootTest
 class Chapter01ApplicationTests {
-    @Value("${number1}")
-    private String number1;
 
-    @Value("${number2}")
-    private Integer number2;
-    @Value("${number}")
-    private String number;
+    @Autowired
+    private DemoData demoData;
+
     @Test
     void contextLoads() {
-        System.out.println(number);
-        System.out.println(number1);
-        System.out.println(number2);
+        System.out.println(demoData);
     }
 
 }
