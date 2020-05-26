@@ -1,40 +1,39 @@
 package com.hongjun.chapter01.pojo;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
-import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.Email;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 /**
  * @author hongjun500
- * @date 2020/5/25 21:09
+ * @date 2020/5/26 20:44
  * Created with 2019.3.2.IntelliJ IDEA
- * Description: @ConfigurationProperties将配置文件中的值于pojo进行绑定(需要添加依赖)
+ * Description:
  */
-@ConfigurationProperties(prefix = "demodata")
 @Component
-// @Validated
-public class DemoData {
-    /**
-     * 数据校验为邮箱格式
-     */
-    @Email
+// 类路径下的demoData.properties配置文件
+@PropertySource(value = "classpath:demoData.properties")
+public class DemoDataByValue {
+    @Value("${demodata.user-name}")
     private String userName;
+    @Value("${demodata.age}")
     private Integer age;
+    @Value("${demodata.gender}")
     private Boolean gender;
+    @Value("${demodata.birth}")
     private Date birth;
     private Map<String, Object> map;
+    @Value("${demodata.list}")
     private List<Object> list;
     private People people;
 
     @Override
     public String toString() {
-        return "Demo{" +
+        return "DemoDataByValue{" +
                 "userName='" + userName + '\'' +
                 ", age=" + age +
                 ", gender=" + gender +
@@ -99,10 +98,5 @@ public class DemoData {
 
     public void setPeople(People people) {
         this.people = people;
-    }
-
-    public static void main(String[] args) {
-        LocalDate now = LocalDate.now();
-        // System.out.println(now.format(DateTimeFormatter.ISO_DATE));
     }
 }
