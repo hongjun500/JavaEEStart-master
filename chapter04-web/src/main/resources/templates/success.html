@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:title="thymeleaf">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>这是thymeleaf页面</h1>
+<p th:text="${map}" th:id="p标签id被替换" th:class="p标签class被替换">你好你好</p>
+<div data-th-text="${user}" >内容被替换</div>
+<!--*{}的功能，配合th:Object-->
+<div th:object="${helloObject}" th:class="'*{}'+配置Object使用">
+    <span th:text="*{name}"></span>
+    <span th:text="*{age}"></span>
+    <span th:text="*{gender}"></span>
+    <span th:text="*{address}"></span>
+</div>
+<div data-th-text="*{user}">内容被替换</div>
+<div th:each=" item : ${list}">
+    <h1 th:text="${item}"></h1>
+</div>
+<!--内置对象，国家区域信息-->
+<p th:text="${#locale.country}">ff</p>
+<p th:text="${param.size()}">ff</p>
+<!--超链接使用-->
+<a th:href="@{https://www.baidu.com}" style="text-decoration: none">链接到百度</a>
+<!--/testThHref--><!--请求-->
+<a th:href="@{/testThHref}" th:style="text-decoration+':'+none">链接另一个请求的页面</a>
+</body>
+</html>
