@@ -11,4 +11,7 @@
 @Value 单个取值
 需要与之一一对应 
 #### 复杂类型建议用@ConfigurationProperties
-#### 简单类型则用@Value
+#### 简单类型则用@Value 
+配置文件激活方式 
+spring.profile.active
+yaml文件以---分文档模块

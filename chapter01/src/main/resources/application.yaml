@@ -1,5 +1,15 @@
-#server:
-#  port: 8080
+server:
+  port: 8080
+spring:
+  profiles:
+    active: test
+
+---
+server:
+  port: 8081
+spring:
+    profiles: dev
+
 #
 ##对象
 ##friend:
@@ -28,4 +38,5 @@
 ##    name: 'people'
 #demodata:
 #  user-name:
+
 ##    age: 2
