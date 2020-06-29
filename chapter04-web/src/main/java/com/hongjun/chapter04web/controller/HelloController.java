@@ -1,5 +1,6 @@
 package com.hongjun.chapter04web.controller;
 
+import com.hongjun.chapter04web.pojo.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties;
@@ -32,6 +33,11 @@ public class HelloController {
     private String address = "仙域";
     private Integer age = 22;
 
+    /*@RequestMapping(value = {"/", "/login"})
+    public String index(){
+        return "login";
+    }*/
+
     @RequestMapping(value = "/hello")
     @ResponseBody
     public String hello(){
@@ -40,6 +46,9 @@ public class HelloController {
 
     @GetMapping(value = "/success")
     public String success(Model model, Map<String, Object> map){
+
+        User user = new User("li", 21);
+        User user1 = new User("li", 21);
 
         List<Object> list = new ArrayList<>();
         list.add(name);

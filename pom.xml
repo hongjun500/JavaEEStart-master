@@ -12,5 +12,10 @@
 
     <modules>
         <module>chapter01</module>
+        <module>chapter02</module>
+        <module>chapter03-autoconfig</module>
+        <module>chapter04-web</module>
+        <module>chapter05-mybatis</module>
+        <module>chapter06-jpa</module>
     </modules>
 </project>
